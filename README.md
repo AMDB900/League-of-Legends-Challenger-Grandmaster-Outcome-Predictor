@@ -16,7 +16,8 @@ Python Libraries:
 - Flask-WTF
 - WTForms
 - Secrets
-
+Device Specifications:
+- At base, **game_data_predictor.ipynb** requires a CUDA gpu but this can be easily changed to cpu by replacing torch.device("cuda"); "cuda" to "cpu"
 # How to Run 
 - Open powershell prompt and use command: **cd** path/to/front-end
 - Use command: flask --app front_end.py --debug run
@@ -33,7 +34,7 @@ Takes the scraped data from the API in JSON form and extracts the meaningful att
 ### Exploratory_Data_Analysis.ipynb
 Explores the win/loss ratios of specified attributes and their prescence within games.
 ### game_data_predictor.ipynb
-Uses a Feed Forward Neural Network to predict in game variable using 
+Uses a Feed Forward Neural Network to predict in game variable using Pytorch on CUDA gpu.
 ### match_data.csv
 Contains the cleaned match data
 
