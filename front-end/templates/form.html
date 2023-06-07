@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>League of Legends Match Predictor</title>
+</head>
+<body>
+    <form method="POST" style="text-align: center;">
+        <h1 style="font-size: 50;">League of Legends Match Predictor</h1>
+        <div style="text-align: center;">
+            {{ form.csrf_token }}
+            {{ form.model_loading.label }}<br>
+            {{ form.model_loading(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+        </div>
+        <div style="display: inline-block; text-align: right; margin-right: 50px; font-size: 32;">
+            {{ form.csrf_token }}
+            {{ form.top.label }}<br>
+            {{ form.top(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.jungle.label }}<br>
+            {{ form.jungle(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.mid.label }}<br>
+            {{ form.mid(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.bot.label }}<br>
+            {{ form.bot(style="font-size: 16px; padding: 5px;") }}
+            </select>
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.support.label }}<br>
+            {{ form.support(style="font-size: 16px; padding: 5px;") }}
+            </select>
+            <br><br>
+        </div>
+        <div style="display: inline-block; text-align: right; margin-left: 50px; font-size: 32;">
+            {{ form.csrf_token }}
+            {{ form.enemy_top.label }}<br>
+            {{ form.enemy_top(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.enemy_jungle.label }}<br>
+            {{ form.enemy_jungle(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.enemy_mid.label }}<br>
+            {{ form.enemy_mid(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.enemy_bot.label }}<br>
+            {{ form.enemy_bot(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+
+            {{ form.csrf_token }}
+            {{ form.enemy_support.label }}<br>
+            {{ form.enemy_support(style="font-size: 16px; padding: 5px;") }}
+            <br><br>
+        </div>
+        <div style="text-align: center;">
+            {{ form.submit(style="font-size: 16px; padding: 5px;") }}
+        </div>
+    </form>
+    {% if output %}
+        <div style="text-align: center; font-size: 20px; align-items: center; margin-top: 20px;">
+            <h1>{{ output }}</h1>
+            <h1>{{ "{:.2f}%".format(prob_out[0] * 100) }} Chance of Winning</h1>
+        </div>
+    {% endif %}
+</body>
+</html>
