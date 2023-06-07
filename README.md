@@ -16,6 +16,7 @@ Python Libraries:
 - Flask-WTF
 - WTForms
 - Secrets
+
 Device Specifications:
 - At base, **game_data_predictor.ipynb** requires a CUDA gpu but this can be easily changed to cpu by replacing torch.device("cuda"); "cuda" to "cpu"
 # How to Run 
